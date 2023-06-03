@@ -134,3 +134,6 @@ dmypy.json
 # *.mp4
 # *.gif
 # *.mp3
+
+.idea
+.vscode

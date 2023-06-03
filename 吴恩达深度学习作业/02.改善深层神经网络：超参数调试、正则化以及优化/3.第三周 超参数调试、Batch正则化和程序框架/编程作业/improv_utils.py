@@ -80,12 +80,12 @@ def predict(X, parameters):
               "W3": W3,
               "b3": b3}
     
-    x = tf.placeholder("float", [12288, 1])
+    x = tf.compat.v1.placeholder("float", [12288, 1])
     
     z3 = forward_propagation(x, params)
     p = tf.argmax(z3)
     
-    with tf.Session() as sess:
+    with tf.compat.v1.Session() as sess:
         prediction = sess.run(p, feed_dict = {x: X})
         
     return prediction
@@ -109,8 +109,8 @@ def create_placeholders(n_x, n_y):
     """
 
     ### START CODE HERE ### (approx. 2 lines)
-    X = tf.placeholder("float", [n_x, None])
-    Y = tf.placeholder("float", [n_y, None])
+    X = tf.compat.v1.placeholder("float", [n_x, None])
+    Y = tf.compat.v1.placeholder("float", [n_y, None])
     ### END CODE HERE ###
     
     return X, Y
@@ -234,7 +234,7 @@ def model(X_train, Y_train, X_test, Y_test, learning_rate = 0.0001,
     init = tf.global_variables_initializer()
 
     # Start the session to compute the tensorflow graph
-    with tf.Session() as sess:
+    with tf.compat.v1.Session() as sess:
         
         # Run the initialization
         sess.run(init)

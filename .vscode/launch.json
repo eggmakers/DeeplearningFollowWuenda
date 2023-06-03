@@ -5,8 +5,9 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "Python",
             "type": "python",
+            "python": "D:\\software\\anaconda\\envs\\tensorflow\\python.exe",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
